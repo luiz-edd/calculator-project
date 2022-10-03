@@ -137,3 +137,21 @@ percent.addEventListener("click", () => {
         displayValue = display.textContent;
     }
 })
+
+// +/-
+const sign = document.querySelector(".sign");
+sign.addEventListener("click", () => {
+
+    if (a === "" && b === "" && lastResult === "" && displayValue !== "") {
+        display.textContent = +display.textContent * (-1);
+        displayValue = display.textContent;
+    }
+    if (a !== "" && b === "" && lastResult === "" && displayValue !== "") {
+        display.textContent = +display.textContent * (-1);
+        displayValue = display.textContent;
+    }
+    if (a !== "" && b !== "" && lastResult !== "" && displayValue !== "") {
+        display.textContent = +display.textContent * (-1);
+        displayValue = display.textContent;
+    }
+});
