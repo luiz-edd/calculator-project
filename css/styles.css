@@ -1,8 +1,9 @@
 body {
     box-sizing: border-box;
+    font-family: monospace;
 }
 .content * {
-    border: solid 1px black;
+    /* border: solid 1px black; */
 }
 .buttons-container * {
     border: none;
@@ -16,17 +17,20 @@ body {
 
 .calculator {
     display: flex;
-    border: solid 1px black;
+    /* border: solid 1px black; */
+    border-radius: 10px;
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
     height: 500px;
     flex-direction: column;
-    flex: 0 0 auto
+    flex: 0 0 auto;
+    background-color: #5A6B77;
 }
 
 .display-container {
     flex: 1 1 auto;
     flex-direction: column;
+    color: white;
 }
 .buttons-container {
     display: flex;
@@ -34,7 +38,7 @@ body {
     flex-wrap: wrap;
     padding: 5%;
     flex-direction: column;   
-    background-color: rgb(30, 30, 30);
+    /* background-color: #5A6B77; */
 }
 .btn-column {
  display: flex;
@@ -43,24 +47,25 @@ body {
 .btn {
     display: flex;
     color: white;
-    background-color: rgb(75, 75, 75);
-    /* border-radius: 4px; */
-    font-size: 20px;
+    background-color: #364d5e;
+    border-radius: 4px;
+    font-size: 27px;
     flex: 1 0 0;
-    /* margin: 1%; */
-    border: solid 1px black;
+    margin: 1%;
+    /* border: solid 1px black; */
     align-items: center;
     justify-content: center;
 }
 .btn:hover {
-    background-color: gray;
+    background-color: #4d6d86;
 }
 .display-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin: 5%;
+    margin: 5% 5% 0 5%;
     flex: 0 1 0;
+    /* border: solid 1px black; */
 }
 
 .display-container * {
@@ -70,6 +75,27 @@ body {
     justify-content: flex-end;
     align-items: center;
     padding-right: 10px;
-    font-size: 25px;
+    font-size: 30px;
 }
 
+
+
+.operator {
+    background-color: #7d98ac;
+}
+.display-container .operator {
+    background-color: #5A6B77;
+}
+
+.equals {
+    background-color: rgb(255, 218, 6);
+    color: black;
+}
+.equals:hover {
+    background-color: rgba(206, 180, 32, 0.996);
+    color: black;
+}
+.del, .clear, .sign {
+    background-color: #7d98ac;
+
+}

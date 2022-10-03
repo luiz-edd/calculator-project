@@ -57,7 +57,7 @@ function addOperatorOnscreen(text) {
 function displayResult() {
     if (a === "" || (b === "" && lastResult === "" && displayValue ==="" )) return; //nao faz a conta e nao tiver nenhum numero atribuido 
 
-    operatorValue = operator.textContent;
+    //operatorValue = operator.textContent;
     if (displayValue === "") {
         display.textContent = operate(operatorValue, lastResult, b); // faz
     } else if (lastResult !== "") {
