@@ -55,6 +55,8 @@ function addOperatorOnscreen(text) {
 }
 
 function displayResult() {
+    if( a === "") return;
+
     operatorValue = operator.textContent;
     if (displayValue === "") {
         display.textContent = operate(operatorValue, lastResult, b);
@@ -102,11 +104,13 @@ operators.forEach(node => {
 
 
 //get special actions
+// =
 const result = document.querySelector(".equals");
 result.addEventListener("click", () => {
     displayResult();
 })
 
+// C
 const clear = document.querySelector(".clear");
 clear.addEventListener("click", () => {
     displayValue = "";
@@ -117,3 +121,28 @@ clear.addEventListener("click", () => {
     display.textContent = "";
     operator.textContent = "";
 });
+
+// %
+const percent = document.querySelector(".percent");
+percent.addEventListener("click", () => {
+    if(a === "" && b === "" &&  lastResult === ""){
+        display.textContent = +display.textContent / 100;
+        displayValue = display.textContent;
+    } else
+    if(a !== "" && b === "" &&  lastResult === "" && displayValue === ""){
+        display.textContent = +display.textContent / 100;
+        a = +display.textContent;
+    } else
+    if(a !== "" && b === "" &&  lastResult === "" && displayValue !== ""){
+        display.textContent = +display.textContent / 100;
+        displayValue = display.textContent;
+    } else
+    if(a !== "" && b !== "" &&  lastResult !== "" && displayValue === ""){
+        display.textContent = +display.textContent / 100;
+        lastResult = +display.textContent;
+    } else
+    if(a !== "" && b !== "" &&  lastResult !== "" && displayValue !== ""){
+        display.textContent = +display.textContent / 100;
+        displayValue = display.textContent;
+    }
+})
