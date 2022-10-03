@@ -39,7 +39,7 @@ function addNumberOnScreen(text) {
 
 function addOperatorOnscreen(text) {
 
-    if(a !== "" && operatorValue !== "" && displayValue !== ""){
+    if (a !== "" && operatorValue !== "" && displayValue !== "") {
         displayResult();
     }
 
@@ -55,7 +55,7 @@ function addOperatorOnscreen(text) {
 }
 
 function displayResult() {
-    if( a === "") return;
+    if (a === "") return;
 
     operatorValue = operator.textContent;
     if (displayValue === "") {
@@ -125,23 +125,14 @@ clear.addEventListener("click", () => {
 // %
 const percent = document.querySelector(".percent");
 percent.addEventListener("click", () => {
-    if(a === "" && b === "" &&  lastResult === ""){
-        display.textContent = +display.textContent / 100;
-        displayValue = display.textContent;
-    } else
-    if(a !== "" && b === "" &&  lastResult === "" && displayValue === ""){
+    //resume
+    if (a !== "" && b === "" && lastResult === "" && displayValue === "") {
         display.textContent = +display.textContent / 100;
         a = +display.textContent;
-    } else
-    if(a !== "" && b === "" &&  lastResult === "" && displayValue !== ""){
-        display.textContent = +display.textContent / 100;
-        displayValue = display.textContent;
-    } else
-    if(a !== "" && b !== "" &&  lastResult !== "" && displayValue === ""){
+    } else if (a !== "" && b !== "" && lastResult !== "" && displayValue === "") {
         display.textContent = +display.textContent / 100;
         lastResult = +display.textContent;
-    } else
-    if(a !== "" && b !== "" &&  lastResult !== "" && displayValue !== ""){
+    } else {
         display.textContent = +display.textContent / 100;
         displayValue = display.textContent;
     }
