@@ -34,7 +34,7 @@ body {
     flex-wrap: wrap;
     padding: 5%;
     flex-direction: column;   
-    background-color: black;
+    background-color: rgb(30, 30, 30);
 }
 .btn-column {
  display: flex;
