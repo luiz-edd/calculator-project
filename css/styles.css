@@ -4,7 +4,9 @@ body {
 .content * {
     border: solid 1px black;
 }
-
+.buttons-container * {
+    border: none;
+}
 .content {
     margin: 0;
     display: flex;
@@ -32,6 +34,7 @@ body {
     flex-wrap: wrap;
     padding: 5%;
     flex-direction: column;   
+    background-color: black;
 }
 .btn-column {
  display: flex;
@@ -41,10 +44,11 @@ body {
     display: flex;
     color: white;
     background-color: rgb(75, 75, 75);
-    border-radius: 4px;
+    /* border-radius: 4px; */
     font-size: 20px;
     flex: 1 0 0;
-    margin: 2%;
+    /* margin: 1%; */
+    border: solid 1px black;
     align-items: center;
     justify-content: center;
 }
@@ -68,3 +72,4 @@ body {
     padding-right: 10px;
     font-size: 25px;
 }
+
