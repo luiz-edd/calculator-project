@@ -13,6 +13,7 @@ function divide(a, b) {
     return a / b;
 }
 
+
 //takes an operatos and 2 numbers
 function operate(operate, a, b) {
     switch (operate) {
@@ -37,6 +38,11 @@ function addNumberOnScreen(text) {
 }
 
 function addOperatorOnscreen(text) {
+
+    if(a !== "" && operatorValue !== "" && displayValue !== ""){
+        displayResult();
+    }
+
     operatorValue = text;
     operator.textContent = operatorValue;
 
@@ -100,3 +106,14 @@ const result = document.querySelector(".equals");
 result.addEventListener("click", () => {
     displayResult();
 })
+
+const clear = document.querySelector(".clear");
+clear.addEventListener("click", () => {
+    displayValue = "";
+    operatorValue = "";
+    a = "";
+    b = "";
+    lastResult = "";
+    display.textContent = "";
+    operator.textContent = "";
+});
