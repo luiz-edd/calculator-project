@@ -15,19 +15,20 @@ body {
 .calculator {
     display: flex;
     border: solid 1px black;
-    width: 40%;
-    max-width: 400px;
+    width: 100%;
+    max-width: 350px;
     height: 500px;
     flex-direction: column;
-    flex: 1 0 auto
+    flex: 0 0 auto
 }
 
-.display {
+.display-container {
     flex: 1 1 auto;
+    flex-direction: column;
 }
 .buttons-container {
     display: flex;
-    flex: 2 1 auto;
+    flex: 5 1 auto;
     flex-wrap: wrap;
     padding: 5%;
     flex-direction: column;   
@@ -50,6 +51,20 @@ body {
 .btn:hover {
     background-color: gray;
 }
-.btn-column {
+.display-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 5%;
+    flex: 0 1 0;
+}
 
+.display-container * {
+    display: flex;
+    height: 50px;
+    flex: 0 1 auto;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+    font-size: 25px;
 }
