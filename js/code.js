@@ -155,3 +155,13 @@ sign.addEventListener("click", () => {
         displayValue = display.textContent;
     }
 });
+
+// delete 
+const del = document.querySelector(".del");
+del.addEventListener("click", () => {
+    if(displayValue === ""){
+        return;
+    }
+    displayValue = displayValue.slice(0,displayValue.length -1 );
+    display.textContent = displayValue;
+});
