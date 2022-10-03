@@ -29,7 +29,7 @@ function operate(operate, a, b) {
 }
 
 function addNumberOnScreen(text) {
-    if (a !== "" && displayValue === "") { //reseta se tiver clicado em um operador
+    if (a !== "" && displayValue === "") { //reseta se tiver clicado em um operador ja com um numero na tela
         display.textContent = "";
     }
 
@@ -39,7 +39,7 @@ function addNumberOnScreen(text) {
 
 function addOperatorOnscreen(text) {
 
-    if (a !== "" && operatorValue !== "" && displayValue !== "") {
+    if (a !== "" && operatorValue !== "" && displayValue !== "") { //faz a conta se clicar no igual novamente,  
         displayResult();
     }
 
@@ -55,11 +55,11 @@ function addOperatorOnscreen(text) {
 }
 
 function displayResult() {
-    if (a === "") return;
+    if (a === "" || (b === "" && lastResult === "" && displayValue ==="" )) return; //nao faz a conta e nao tiver nenhum numero atribuido 
 
     operatorValue = operator.textContent;
     if (displayValue === "") {
-        display.textContent = operate(operatorValue, lastResult, b);
+        display.textContent = operate(operatorValue, lastResult, b); // faz
     } else if (lastResult !== "") {
         b = +display.textContent;
         display.textContent = operate(operatorValue, lastResult, b);
