@@ -184,7 +184,7 @@ del.addEventListener("click", () => {
 const dot = document.querySelector(".point");
 dot.addEventListener("click", () =>{
     const point = dot.textContent;
-    if ((b === "" && lastResult === "" && displayValue === "")){
+    if (( (b === "" && lastResult === "" && displayValue === "") || displayValue.includes("."))){
         return;
     }
     addNumberOnScreen(point);
