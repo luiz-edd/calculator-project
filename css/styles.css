@@ -19,11 +19,11 @@ body {
     display: flex;
     /* border: solid 1px black; */
     border-radius: 10px;
-    width: 100%;
+    /* width: 100%; */
     max-width: 400px;
     height: 500px;
     flex-direction: column;
-    flex: 0 0 auto;
+    flex: 1 1 auto;
     background-color: #5A6B77;
 }
 
@@ -42,7 +42,7 @@ body {
 }
 .btn-column {
  display: flex;
- flex: 1 0 auto;
+ flex: 1 1 auto;
 }
 .btn {
     display: flex;

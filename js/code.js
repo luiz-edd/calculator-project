@@ -84,7 +84,7 @@ let lastResult = "";
 
 
 //events 
-//get numeric values
+//display numeric values
 const numbers = document.querySelectorAll(".number");
 numbers.forEach(node => {
     const text = node.textContent;
@@ -93,7 +93,7 @@ numbers.forEach(node => {
     });
 });
 
-//get operators
+//display operators
 const operators = document.querySelectorAll(".operator");
 operators.forEach(node => {
     const text = node.textContent;
@@ -103,7 +103,7 @@ operators.forEach(node => {
 })
 
 
-//get special actions
+//special actions
 // =
 const result = document.querySelector(".equals");
 result.addEventListener("click", () => {
@@ -169,3 +169,13 @@ del.addEventListener("click", () => {
         display.textContent = displayValue;
     }
 });
+
+// .
+const dot = document.querySelector(".point");
+dot.addEventListener("click", () =>{
+    const point = dot.textContent;
+    if (b === "" && lastResult === "" && displayValue === ""){
+        return;
+    }
+    addNumberOnScreen(point);
+})
