@@ -83,7 +83,7 @@ let b = "";
 let lastResult = "";
 
 
-//events 
+//========================= events  ==============================
 //display numeric values
 const numbers = document.querySelectorAll(".number");
 numbers.forEach(node => {
@@ -92,6 +92,13 @@ numbers.forEach(node => {
         addNumberOnScreen(text);
     });
 });
+//keydown event
+window.addEventListener("keydown", (e) =>{
+    const pressedButton = document.querySelector(`.${e.code}`);
+    if(pressedButton === null) return;
+    pressedButton.click();
+});
+
 
 //display operators
 const operators = document.querySelectorAll(".operator");
@@ -99,8 +106,10 @@ operators.forEach(node => {
     const text = node.textContent;
     node.addEventListener('click', () => {
         addOperatorOnscreen(text);
-    })
-})
+    });
+});
+
+
 
 
 //special actions
@@ -138,6 +147,7 @@ percent.addEventListener("click", () => {
     }
 })
 
+
 // +/-
 const sign = document.querySelector(".sign");
 sign.addEventListener("click", () => {
@@ -174,7 +184,7 @@ del.addEventListener("click", () => {
 const dot = document.querySelector(".point");
 dot.addEventListener("click", () =>{
     const point = dot.textContent;
-    if (b === "" && lastResult === "" && displayValue === ""){
+    if ((b === "" && lastResult === "" && displayValue === "")){
         return;
     }
     addNumberOnScreen(point);
