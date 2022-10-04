@@ -10,7 +10,7 @@ function multiply(a, b) {
     return a * b;
 }
 function divide(a, b) {
-    return a / b;
+    return Math.round((a / b)*100000)/100000;
 }
 
 
@@ -136,13 +136,13 @@ const percent = document.querySelector(".percent");
 percent.addEventListener("click", () => {
     //resume
     if (a !== "" && b === "" && lastResult === "" && displayValue === "") {
-        display.textContent = +display.textContent / 100;
+        display.textContent = Math.round((+display.textContent / 100)*1000000)/1000000;
         a = +display.textContent;
     } else if (a !== "" && b !== "" && lastResult !== "" && displayValue === "") {
-        display.textContent = +display.textContent / 100;
+        display.textContent = Math.round((+display.textContent / 100)*1000000)/1000000;
         lastResult = +display.textContent;
     } else {
-        display.textContent = +display.textContent / 100;
+        display.textContent = Math.round((+display.textContent / 100)*1000000)/1000000;
         displayValue = display.textContent;
     }
 })
